@@ -25,7 +25,6 @@ app.post("/", (req, res) => {
 
 app.listen(process.env.PORT || 5080, () => console.log("Server running..."));
 
-
 // Из полученных от клиена параметров
 // собираем массив точек "arrayPoints"
 const calcCoordinates = (coneParameter) => {
