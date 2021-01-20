@@ -12,13 +12,14 @@ app.use("/static", express.static(path.join(__dirname, "frontend", "static")));
 app.use("/build/", express.static(path.join(__dirname, "node_modules/three/build")));
 app.use("/jsm/", express.static(path.join(__dirname, "node_modules/three/examples/jsm")));
 
+//Рендерим "views/index.ejs" 
 app.get("/*", (req, res) => {
-  res.render('index'); //Рендерим "views/index.ejs" 
+  res.render('index'); 
 });
 
+// Рендерим "views/cone.ejs" при POST запросе с корня "/" и отправляем собранный массив "arrayPoints"
 app.post("/", (req, res) => {
   let arrayPoints = calcCoordinates(req)
-  // Рендерим "views/cone.ejs" при POST запросе с корня "/" и отправляем собранный массив "arrayPoints"
   res.render('cone', { points: JSON.stringify(arrayPoints) });
 });
 
