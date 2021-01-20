@@ -1,2 +1,2 @@
 # Cone
- cone triangulation
+ Cone triangulation
